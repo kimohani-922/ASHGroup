@@ -51,6 +51,8 @@ https://templatemo.com/tm-591-villa-agency
           <ul class="social-links">
             <li><a href="https://www.tiktok.com/@ashhospitalitygroup_"><i class="fab fa-tiktok"></i></a></li>
             <li><a href="https://www.instagram.com/ashhospitalitygroup/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCZC9kt72x7GaOCJupvB4ATg"><i class="fa-brands fa-youtube"></i></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -69,12 +71,31 @@ https://templatemo.com/tm-591-villa-agency
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="Services.html">Services</a></li>
-              <li><a href="About Us.html">About Us</a></li>
-              <li><a href="Careers.html">Careers</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="#"><i class="fa fa-search"></i>Search...</a></li>
+              <div class="flag-dropdown" id="flagDropdown">
+                <div class="flag-selected" onclick="toggleDropdown()">
+                  <img id="selectedFlag" src="https://flagcdn.com/w40/gb.png" alt="en">
+                </div>
+                <div class="flag-options" id="flagOptions">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="en" onclick="selectLanguage('en', 'gb')">
+                  <img src="https://flagcdn.com/w40/de.png" alt="de" onclick="selectLanguage('de', 'de')">
+                  <img src="https://flagcdn.com/w40/ru.png" alt="ru" onclick="selectLanguage('ru', 'ru')">
+                  <img src="https://flagcdn.com/w40/fr.png" alt="fr" onclick="selectLanguage('fr', 'fr')">
+                  <img src="https://flagcdn.com/w40/tr.png" alt="tr" onclick="selectLanguage('tr', 'tr')">
+                  <img src="https://flagcdn.com/w40/es.png" alt="es" onclick="selectLanguage('es', 'es')">
+                </div>
+              </div>
+
+              <li><a href="index.html" id="nav-home">Home</a></li>
+              <li><a href="Services.html" id="nav-services">Services</a></li>
+              <li><a href="About Us.html" id="nav-about">About Us</a></li>
+              <li><a href="Careers.html" id="nav-careers">Careers</a></li>
+              <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
+              <li>
+                <div class="search-container">
+                  <input type="text" placeholder="Search..." id="searchBar">
+                  <button onclick="searchFunction()"><i class="fa fa-search"></i></button>
+                </div>
+              </li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -91,7 +112,7 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3 class="contactus">Reservation</h3>
+          <h3 class="contactus" id="reserves">Reservation</h3>
         </div>
       </div>
     </div>
@@ -100,7 +121,7 @@ https://templatemo.com/tm-591-villa-agency
   <div class="reservation-page contact-page">
     <div class="container">
       <div class="col-lg-6">
-        <form id="contact-form" action="SendData.php" method="POST">
+        <form id="contact-form" action="" method="POST">
           <label for="name">Full Name</label>
           <input type="test" name="name" id="name" placeholder="Your Name..." required>
 
@@ -137,7 +158,9 @@ https://templatemo.com/tm-591-villa-agency
           </div>
         </form>
       </div>
-
+      <script>
+       
+      </script>
     </div>
   </div>
   <br>
@@ -148,8 +171,9 @@ https://templatemo.com/tm-591-villa-agency
     <div class="container">
       <div class="row">
         <div class="col-lg-12" style="display: inline;">
-          <h5 style="display: ruby-text-container; color: coral;">Let's Connect!</h5>
-          <h5 style="display: ruby-text-container; color: #fff; font-family: Arial, Helvetica, sans-serif;"><br> For
+          <h5 style="display: ruby-text-container; color: coral;" id="Connect">Let's Connect!</h5>
+          <h5 style="display: ruby-text-container; color: #fff; font-family: Arial, Helvetica, sans-serif;"
+            id="whatsapp"><br> For
             more information please stay in touch
             and contact us</h5>
           <a href="https://api.whatsapp.com/send/?phone=%2B971557895397&text&type=phone_number&app_absent=0"><img
@@ -159,6 +183,9 @@ https://templatemo.com/tm-591-villa-agency
       </div>
     </div>
   </div>
+
+
+
   <footer id="footer" class="footer " style=" height: 500px;">
     <div class="container footer-top">
       <div class="row gy-4">
@@ -168,47 +195,48 @@ https://templatemo.com/tm-591-villa-agency
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4
+          <h4 id="footer-usefullinks"
             style="color: aliceblue; border-left: 4px solid #ff4d17; height: 1rem; margin-bottom: 20px; padding-left: 10px;">
             Useful Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="About Us.html">About US</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="Services.html">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="Careers.html">Careers</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="contact.html">Contact US</a></li>
+            <li> <a href="index.html" id="footer-homelink">Home</a></li>
+            <li> <a href="About Us.html" id="footer-aboutlink">About US</a></li>
+            <li> <a href="Services.html" id="footer-serviceslink">Services</a></li>
+            <li> <a href="Careers.html" id="footer-careerlink">Careers</a></li>
+            <li> <a href="contact.html" id="footer-contactlink">Contact US</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-3 footer-links">
-          <h4
+          <h4 id="footer-services"
             style="color: aliceblue; border-left: 4px solid #ff4d17; height: 1rem; margin-bottom: 20px; padding-left: 10px; ">
             Our Services</h4>
           <ul>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>Flight Tickets
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="flight">Flight Tickets</span>
             </li>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>Airport Meet & Greet Service
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="airport">Airport Meet & Greet
+                Service</span>
             </li>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>VIP Transfers
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="vip">VIP Transfers</span>
             </li>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>Hotel Accommodations
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="hotel">Hotel Accommodations</span>
             </li>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>Travel Insurance
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="travel">Travel Insurance</span>
             </li>
             <li>
-              <h6 style="color: #ff4d17; padding-right: 10px;">></h6>City Tours Excursions
+              <h6 style="color: #ff4d17; padding-right: 10px;">></h6><span id="citytours">City Tours Excursions</span>
             </li>
           </ul>
         </div>
 
 
         <div class="col-lg-4 col-md-12 footer-links">
-          <h4
+          <h4 id="footer-content"
             style="color: aliceblue; border-left: 4px solid #ff4d17; height: 1rem; margin-bottom: 20px; padding-left: 10px; ">
             Content Information</h4>
           <ul>
@@ -221,9 +249,10 @@ https://templatemo.com/tm-591-villa-agency
                 55789 53 97</a></li>
             <li>
               <div class="divbookfooter" style="padding-top: 20px;">
-                <button class="booknow"><a style="  color: #fff;" href="Reservation.html">Book Now</a> </button>
+                <button class="booknow"><a style="  color: #fff;" href="Reservation.html" id="book">Book
+                    Now</a> </button>
                 <br>
-                <h5 style="text-align: center; color: #ff4d17; padding-top:10px ;">CALL HOTLINE</h5>
+                <h5 style="text-align: center; color: #ff4d17; padding-top:10px ;" id="callhotline">CALL HOTLINE</h5>
                 <h6 style="text-align: center; color: aliceblue; padding-top:10px ;">800-872 216 2330</h6>
               </div>
             </li>
@@ -234,28 +263,50 @@ https://templatemo.com/tm-591-villa-agency
     </div>
 
     <div class="container copyright text-center mt-4">
-
-      <div class="footer-lower">
-        <div class="footer-left">
-          <h4
+      <div class="footer-lower row">
+        <!-- Column 1: Follow Us -->
+        <div class="col-md-4 footer-left">
+          <h4 id="footer-followus"
             style="color: aliceblue; border-left: 4px solid #ff4d17; height: 1rem; margin-bottom: 20px; padding-left: 10px;">
             Follow Us</h4>
           <div class="social-links d-flex">
             <a href="https://www.tiktok.com/@ashhospitalitygroup_"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://www.instagram.com/ashhospitalitygroup/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCZC9kt72x7GaOCJupvB4ATg"><i class="fa-brands fa-youtube"></i></a>
+
           </div>
         </div>
-        <div class="footer-right">
-          <p>© 2025 Copyright <strong> ASH Hospitality Group</strong> All Rights Reserved</p>
+
+        <!-- Column 2: About Us or Additional Links -->
+        <div class="col-md-4 footer-middle">
+          <h4 id="footer-cairocall"
+            style="color: aliceblue; border-left: 4px solid #ff4d17; height: 1rem; margin-bottom: 20px; padding-left: 10px;">
+            For Reservations and Trips in Cairo call:
+          </h4>
+          <ul class="footer-links" style="padding-left: 0;">
+            <li><a style="color: #ff4d17;" href="https://api.whatsapp.com/send/?phone=201120905978"><strong>
+                  201120905978</strong></a>
+            </li>
+            <li><a style="color: #ff4d17;"
+                href="https://api.whatsapp.com/send/?phone=201064106628"><strong>201064106628</strong></a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Column 3: Copyright and Rights Reserved -->
+        <div class="col-md-4 footer-right">
+          <p id="footer-copyright">© 2025 Copyright <strong>ASH Hospitality Group</strong> All Rights Reserved</p>
         </div>
       </div>
-
     </div>
+
 
   </footer>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
+  <script src="assets\js\reservation.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/isotope.min.js"></script>
